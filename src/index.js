@@ -5,6 +5,7 @@ import { userRouter } from './routes/users.js'
 import { recipesRouter } from './routes/Recipes.js'
 import dotenv from 'dotenv'
 dotenv.config()
+const PORT = process.env.PORT || 4000
 const app = express()
 
 app.use(express.json())
@@ -21,6 +22,6 @@ mongoose.connect(
     }
 )
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log('server started')
 })
